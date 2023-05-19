@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GamesActivity">
+
+    <RelativeLayout
+        android:background="@drawable/ic_gamesbg"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"/>
+
+    <RelativeLayout
+        android:alpha="0.7"
+        android:background="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"/>
+
+    <RelativeLayout
+        android:id="@+id/gamesHeader"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <TextView
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/chooseYourGame"
+            android:textColor="@color/white"
+            android:textSize="42sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/gamesBody"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/bg_roudend_primary_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <GridView
+            android:id="@+id/gridGames"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:numColumns="2"
+            android:scrollbarStyle="outsideOverlay"
+            android:verticalScrollbarPosition="right"
+            android:scrollbars="vertical">
+        </GridView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

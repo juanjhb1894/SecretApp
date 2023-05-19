@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgGameItem"
+            android:layout_width="match_parent"
+            android:scaleType="fitXY"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_gamesbg"
+            app:shapeAppearance="@style/ShapeAppearanceOverlay.Avatar"/>
+
+        <ImageView
+            android:layout_margin="5dp"
+            android:id="@+id/imgInformation"
+            android:src="@drawable/ic_baseline_info_24"
+            android:layout_alignParentEnd="true"
+            android:layout_height="32dp"
+            android:layout_width="32dp"
+            />
+
+        <TextView
+            android:layout_below="@id/imgGameItem"
+            android:layout_margin="5dp"
+            android:id="@+id/tvGameItem1"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

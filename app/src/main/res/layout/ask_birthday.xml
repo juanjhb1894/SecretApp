@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/bg_roudend_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:padding="10dp"
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvTitleBirthday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/how_old"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgCake"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@id/tvTitleBirthday"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_baseline_cake_24" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/imgCake"
+            android:id="@+id/sorry_for_asking"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="@string/sorry_for_asking"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/sorry_for_asking"
+            android:id="@+id/lyDateContainer"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etDay"
+                android:hint="DAY"
+                android:textAlignment="center"
+                android:backgroundTint="@color/primary_500"
+                android:maxLength="2"
+                android:inputType="number"
+                android:layout_width="75dp"
+                android:layout_height="50dp"/>
+
+            <EditText
+                android:id="@+id/etMonth"
+                android:hint="MONTH"
+                android:textAlignment="center"
+                android:backgroundTint="@color/primary_500"
+                android:maxLength="2"
+                android:inputType="number"
+                android:layout_width="75dp"
+                android:layout_height="50dp"/>
+
+            <EditText
+                android:id="@+id/etYear"
+                android:hint="YEAR"
+                android:textAlignment="center"
+                android:backgroundTint="@color/primary_500"
+                android:maxLength="4"
+                android:inputType="number"
+                android:layout_width="125dp"
+                android:layout_height="50dp"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/submit_birthday"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/lyDateContainer"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_rounded_corner"
+            android:text="Submit"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

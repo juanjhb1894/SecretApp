@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RandomizerActivity">
+
+    <ImageView
+        android:layout_margin="20dp"
+        android:id="@+id/imgRandomPosition"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.25"
+        android:background="@color/primary_500" />
+
+    <TextView
+        android:id="@+id/tvRandomPosition"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="15dp"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+    <ImageView
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="130dp"
+        android:layout_above="@id/tvRandomPosition"
+        android:src="@drawable/ic_baseline_info_24"
+        android:id="@+id/icInfoRandomPosition"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:scaleType="fitXY"
+        />
+
+    <TextView
+        android:id="@+id/tvFlippingCard"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:textSize="250sp"
+        android:textColor="@color/primary_500"
+        android:text="@string/question_mark"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/unknown_card"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        app:borderWidth="0dp"
+        android:src="@drawable/ic_baseline_sync_white_24"
+        android:backgroundTint="@color/primary_500"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/fabRandomPosition"
+        android:layout_width="81dp"
+        android:layout_height="81dp"
+        app:maxImageSize="60dp"
+        app:fabCustomSize="81dp"/>
+
+</RelativeLayout>

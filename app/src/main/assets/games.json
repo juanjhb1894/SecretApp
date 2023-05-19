@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Dice",
+    "description": "This is a dice game intended to heighten the sexual atmosphere and promote foreplay",
+    "image": "https://inpartnergroup.com/applications/secretapp/resources/img/ic_dices.png",
+    "rules": "Rules are simple, there will be 2 dices, one with actions and the other with body parts.\nYou just need to do what the dice shows."
+  },
+  {
+    "id": 2,
+    "name": "Randomizer",
+    "description": "A fun way to remove monotony from your sex life. This game allows you to have fun in random positions",
+    "image": "https://inpartnergroup.com/applications/secretapp/resources/img/ic_randomizer.png",
+    "rules": "Easy, this game will show a random position and it's information from our database.\nYou just need to copy what you see."
+  }
+]
