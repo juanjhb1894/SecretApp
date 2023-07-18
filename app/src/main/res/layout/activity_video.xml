@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VideoActivity">
+
+    <FrameLayout
+        android:id="@+id/secondMedia"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.example.appofsecrets.customs.FullScreenVideoView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fullScreenVideoView"/>
+
+    </FrameLayout>
+
+    <ImageView
+        android:layout_margin="10dp"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_baseline_info_24"
+        android:id="@+id/imgVideoInfo"
+        android:layout_width="48dp"
+        android:layout_height="48dp"/>
+
+    <LinearLayout
+        android:paddingTop="15dp"
+        android:paddingStart="20dp"
+        android:visibility="gone"
+        android:layout_marginTop="100dp"
+        android:orientation="vertical"
+        android:id="@+id/llVideoInformation"
+        android:background="@drawable/bg_roudend_top_white_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/tvVideoName"
+            android:textStyle="bold"
+            android:text="Name"
+            android:textSize="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/tvVideoAuthor"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_search_et_primary"
+            android:text="Author"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textSize="24sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/tvVideoDescription"
+            android:text="Description"
+            android:textSize="24sp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

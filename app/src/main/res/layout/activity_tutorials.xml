@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF7F8"
+    tools:context=".TutorialsActivity">
+
+    <EditText
+        android:id="@+id/etSearchVideo"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg_search_et"
+        android:hint="@string/search_hint"
+        android:paddingStart="10dp"
+        tools:ignore="RtlSymmetry" />
+
+    <LinearLayout
+        android:id="@+id/llFilter"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/etSearchVideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvPopularVideo"
+            android:textColor="@color/black"
+            android:background="@drawable/bg_search_et"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:text="@string/popular_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvWomenVideo"
+            android:textColor="@color/black"
+            android:background="@drawable/bg_search_et"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:text="@string/for_women_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvMenVideo"
+            android:textColor="@color/black"
+            android:background="@drawable/bg_search_et"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:text="@string/for_men_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <GridView
+        android:layout_below="@id/llFilter"
+        android:id="@+id/gridVideo"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:numColumns="2"
+        android:scrollbarStyle="outsideOverlay"
+        android:verticalScrollbarPosition="right"
+        android:scrollbars="vertical"/>
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:paddingTop="15dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:layout_marginTop="150dp"
+        android:id="@+id/hidden_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_roudend_top_white_layout"
+        android:visibility="gone" >
+
+        <ImageView
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_baseline_close_24_main"
+            android:id="@+id/imgTutorialInfoClose"
+            android:layout_width="28dp"
+            android:layout_height="28dp"/>
+
+        <TextView
+            android:layout_below="@id/imgTutorialInfoClose"
+            android:layout_marginTop="5dp"
+            android:id="@+id/tvTutotialName"
+            android:textStyle="bold"
+            android:text="Name"
+            android:textSize="26sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:layout_below="@id/tvTutotialName"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tvTutotialAuthor"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_search_et_primary"
+            android:text="Author"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:layout_below="@id/tvTutotialAuthor"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tvTutotialDescription"
+            android:text="Description"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"/>
+
+        <View
+            android:id="@+id/vSepatator"
+            android:layout_below="@id/tvTutotialDescription"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/primary_200"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_below="@id/vSepatator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textAlignment="center"
+                android:layout_marginTop="10dp"
+                android:text="@string/open_with"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imgPlayTutorial"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/baseline_smart_display_24"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"/>
+
+                <ImageView
+                    android:id="@+id/imgPlayOutsideTutorial"
+                    android:src="@drawable/baseline_open_in_browser_24"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"/>
+
+                <ImageView
+                    android:id="@+id/imgPlayWithTutorial"
+                    android:src="@drawable/baseline_more_horiz_24"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rbSaveAsDefault"
+                    android:buttonTint="@color/primary_200"
+                    android:layout_gravity="center"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"/>
+
+                <TextView
+                    android:text="@string/open_with_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -5,14 +5,400 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     android:padding="5dp"
     tools:context=".PlacesActivity">
 
-    <ListView
-        android:id="@+id/lstPlaces"
+    <LinearLayout
+        android:gravity="end"
+        android:padding="2dp"
+        android:id="@+id/llPlaceHeader"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@drawable/baseline_filter_alt_24"
+            android:scaleType="fitXY"
+            android:id="@+id/imgPlaceFilter"
+            android:layout_width="32dp"
+            android:layout_height="32dp"/>
+
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/lstPlaces"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/llPlaceHeader"
+        android:layout_marginTop="0dp"
+        android:numColumns="1"
+        android:scrollbarSize="1dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbarThumbVertical="@color/primary_200"
+        android:scrollbars="vertical"
+        android:verticalScrollbarPosition="right" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddNewPlace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:backgroundTint="@color/primary_200"
+        android:foregroundTint="@color/white"
+        android:src="@drawable/baseline_add_24_white" />
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:paddingTop="15dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/filter_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_roudend_top_white_layout"
+        android:visibility="gone" >
+
+        <ImageView
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_baseline_close_24_main"
+            android:id="@+id/imgPlaceFilterClose"
+            android:layout_width="28dp"
+            android:layout_height="28dp"/>
+
+        <TextView
+            android:layout_below="@id/imgPlaceFilterClose"
+            android:layout_marginTop="5dp"
+            android:id="@+id/tvTutotialName"
+            android:textStyle="bold"
+            android:text="@string/filter"
+            android:textSize="26sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/tvTutotialName"
+            android:orientation="horizontal"
+            android:id="@+id/swLocationContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <Switch
+                android:layout_weight="1"
+                android:id="@+id/swLocation"
+                android:thumbTint="@color/primary_200"
+                android:shadowColor="@color/background"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/sw_geolocation"
+                android:checked="true"
+                android:theme="@style/SCBSwitch"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <TextView
+                android:textStyle="bold"
+                android:textAlignment="textEnd"
+                android:layout_weight="1"
+                android:text="@string/real"
+                android:textAllCaps="true"
+                android:id="@+id/tvLocationMode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:enabled="false"
+            android:hint="@string/set_coordinates"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/swLocationContainer"
+            android:id="@+id/etCoordinates"
+            android:backgroundTint="@color/primary_200"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            tools:ignore="UnknownId" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/lblverifiedPlaces"
+            android:layout_below="@id/etCoordinates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/filter_verified_places"/>
+
+        <LinearLayout
+            android:layout_below="@id/lblverifiedPlaces"
+            android:orientation="horizontal"
+            android:id="@+id/swVerifiedContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <Switch
+                android:layout_weight="1"
+                android:id="@+id/swVerified"
+                android:thumbTint="@color/primary_200"
+                android:shadowColor="@color/background"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/sw_verified"
+                android:checked="false"
+                android:theme="@style/SCBSwitch"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <TextView
+                android:textStyle="bold"
+                android:textAlignment="textEnd"
+                android:layout_weight="1"
+                android:text="@string/any"
+                android:textAllCaps="true"
+                android:id="@+id/tvVerifiedMode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/swVerifiedContainer"
+            android:id="@+id/llPlaceDistanceContainer"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:text="@string/radius"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_weight="1"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
+                android:id="@+id/tvSeekbarValue"
+                android:textAlignment="textEnd"
+                android:text="30 km"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <SeekBar
+            android:layout_below="@id/llPlaceDistanceContainer"
+            android:id="@+id/seekbar"
+            android:layout_marginTop="5dp"
+            android:progressTint="@color/primary_200"
+            android:thumbTint="@color/primary_200"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:progress="30"
+            android:max="250"/>
 
 
+        <TextView
+            android:layout_below="@id/seekbar"
+            android:id="@+id/key_cat"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:text="@string/categories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_below="@id/key_cat"
+            android:id="@+id/spnCategoryContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/spinner_rounded_primary_border">
+
+            <Spinner
+                style="@style/mySpinnerStyle"
+                android:id="@+id/spnCategory"
+                android:entries="@array/categories"
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+        </LinearLayout>
+
+
+        <Button
+            android:layout_centerHorizontal="true"
+             android:layout_below="@id/spnCategoryContainer"
+             android:id="@+id/btnApplyPlaceFilters"
+             android:layout_margin="10dp"
+             android:textStyle="bold"
+             android:textColor="@color/white"
+             android:text="@string/apply"
+             android:background="@drawable/button_rounded_corner_200"
+             android:layout_width="150dp"
+             android:layout_height="45dp"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:paddingTop="15dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/new_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_roudend_top_white_layout"
+        android:visibility="gone" >
+
+        <ImageView
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_baseline_close_24_main"
+            android:id="@+id/imgNewPlaceClose"
+            android:layout_width="28dp"
+            android:layout_height="28dp"/>
+
+        <TextView
+            android:layout_below="@id/imgNewPlaceClose"
+            android:id="@+id/tvNewPlaceName"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            android:text="@string/submit_place"
+            android:textSize="26sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:id="@+id/separatorNewPlace"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_below="@id/tvNewPlaceName"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/primary_200"/>
+
+        <ScrollView
+            android:scrollbarAlwaysDrawHorizontalTrack="false"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarThumbVertical="@color/primary_200"
+            android:id="@+id/frmScrollView"
+            android:padding="10dp"
+            android:layout_below="@id/separatorNewPlace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/lblNewName"
+                    android:textStyle="bold"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:hint="@string/place_name"
+                    android:layout_below="@id/lblNewName"
+                    android:id="@+id/etNewPlaceName"
+                    android:backgroundTint="@color/primary_200"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    tools:ignore="UnknownId" />
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/etNewPlaceName"
+                    android:id="@+id/key_cat1"
+                    android:textStyle="bold"
+                    android:text="@string/categories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:layout_below="@id/key_cat1"
+                    android:id="@+id/spnCategoryContainer1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/spinner_rounded_primary_border">
+
+                    <Spinner
+                        style="@style/mySpinnerStyle"
+                        android:id="@+id/spnNewPlaceCategory"
+                        android:entries="@array/categories"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp" />
+
+                </LinearLayout>
+
+
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/spnCategoryContainer1"
+                    android:id="@+id/lblNewImage"
+                    android:textStyle="bold"
+                    android:text="@string/map"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+                <TextView
+                    android:layout_below="@id/lblNewImage"
+                    android:id="@+id/lblNewImageAction"
+                    android:text="@string/pick_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <fragment
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/lblNewImageAction"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:id="@+id/googleMapNewPlace"
+                    android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+
+        <Button
+            android:id="@+id/btnSubmitNewPlace"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:layout_below="@id/frmScrollView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_rounded_corner_200"
+            android:text="@string/submit"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
 
 </RelativeLayout>

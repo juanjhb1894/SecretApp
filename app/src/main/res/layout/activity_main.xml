@@ -69,7 +69,7 @@
             android:id="@+id/imgPlaces"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:src="@drawable/ic_baseline_home_24" />
+            android:src="@drawable/baseline_pin_drop_24" />
 
         <View
             android:layout_width="match_parent"
@@ -81,7 +81,7 @@
             android:id="@+id/imgBook"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:src="@drawable/ic_baseline_menu_book_24" />
+            android:src="@drawable/baseline_smart_display_24" />
 
     </LinearLayout>
 

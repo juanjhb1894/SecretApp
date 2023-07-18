@@ -44,14 +44,17 @@
 
     <TextView
         android:id="@+id/tvFlippingCard"
-        android:layout_margin="10dp"
-        android:gravity="center"
-        android:textSize="250sp"
-        android:textColor="@color/primary_500"
-        android:text="@string/question_mark"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/unknown_card"/>
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/unknown_card"
+        android:gravity="center"
+        android:text="@string/question_mark"
+        android:textColor="@color/primary_500"
+        android:textSize="250sp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_marginStart="25dp"

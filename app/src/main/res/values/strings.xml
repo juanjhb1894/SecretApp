@@ -42,9 +42,57 @@
     <string name="why_key">Why?\n</string>
     <string name="description_key">Description:\n</string>
     <string name="question_mark">\?</string>
+    <string name="search_hint">Search a video...</string>
+    <string name="popular_key">Popular</string>
+    <string name="for_women_key">For Women</string>
+    <string name="for_men_key">For Men</string>
+    <string name="open_with">Choose an item to play the video</string>
+    <string name="open_with_default">Always open with this item</string>
+    <string name="cat1">One Night Stand</string>
+    <string name="cat0">Unknown</string>
+    <string name="filter">Filters</string>
+    <string name="apply">APPLY</string>
+    <string name="sw_geolocation">Location Mode</string>
+    <string name="mock">Mock</string>
+    <string name="real">Real</string>
+    <string name="set_coordinates">Insert your coordinates</string>
+    <string name="radius">Radius</string>
+    <string name="categories">Categories</string>
+    <string name="submit_place">Submit a new place</string>
+    <string name="newPlaceName">Add a new place</string>
+    <string name="name">Name</string>
+    <string name="place_name">Place\'s Name</string>
+    <string name="place_country">Country</string>
+    <string name="state">State or Province</string>
+    <string name="image">Image</string>
+    <string name="choos_a_pic">Choose a picture from your gallery</string>
+    <string name="submit">Submit</string>
+    <string name="success">Success</string>
+    <string name="request_successfully_submited">Your Request Successfully Submited</string>
+    <string name="map">Map</string>
+    <string name="pick_location">Pin the new location in the Map</string>
+    <string name="sure">Sure</string>
+    <string name="cancel">Cancel</string>
+    <string name="important">Important</string>
+    <string name="new_place_next_step">For the next step we need a picture to identify the place</string>
+    <string name="please_complete_the_form">Please complete the form before submitting the place</string>
+    <string name="okey">Okey</string>
+    <string name="error">Error</string>
+    <string name="error_has_occurred">An error has occurred. Please try again later</string>
+    <string name="verified">VERIFIED</string>
+    <string name="sw_verified">Verified Places</string>
+    <string name="any">Anything</string>
+    <string name="filter_verified_places">Filter between verified or all places</string>
     <string-array name="game_level">
         <item>FOREPLAY</item>
         <item>SEXPLAY</item>
+    </string-array>
+    <string-array name="categories">
+        <item>Any</item>
+        <item>One night stand</item>
+        <item>Hotel</item>
+        <item>Food</item>
+        <item>Recreation</item>
     </string-array>
 
 </resources>
